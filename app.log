@@ -1,0 +1,62 @@
+2019-03-18 22:50:26,909 - MainThread -      INFO -            App.get_new_proxies  - Added new proxies!
+2019-03-18 22:50:26,913 - MainThread -      INFO -                            Run  - Start thread RUN ------------------------
+2019-03-18 22:50:27,959 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:50:32,481 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:50:36,997 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:50:41,514 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:50:46,085 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:50:50,603 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:50:55,121 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:50:59,700 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:51:04,217 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:51:06,191 -   Thread-6 -   WARNING -       Contact.TBotNotify.start  - Start process cannot connect! 
+2019-03-18 22:51:40,758 - WorkerThread2 -      INFO -       Contact.TBotNotify.start  - Succes send welcome!
+2019-03-18 22:51:43,973 - WorkerThread1 -     ERROR -                        TeleBot  - ProxyError occurred, args=(MaxRetryError("HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot393008213:AAFXvBiV6wPk7hEfJPWWpMN5-JfOaaZnE_A/sendMessage?chat_id=276615855&text=%D0%95%D1%89%D0%B5+%D1%80%D0%B0%D0%B7+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+Andrey+Normandec%21%0A%D0%A2%D1%8B+%D1%83%D0%B6%D0%B5+%D0%B5%D1%81%D1%82%D1%8C+%D0%B2+%D0%B1%D0%B0%D0%B7%D0%B5+%D0%BC%D0%BE%D0%B8%D1%85+%D0%B4%D1%80%D1%83%D0%B7%D0%B5%D0%B9%21&reply_to_message_id=11290 (Caused by ProxyError('Cannot connect to proxy.', RemoteDisconnected('Remote end closed connection without response',)))",),)
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\urllib3\connectionpool.py", line 594, in urlopen
+    self._prepare_proxy(conn)
+  File "C:\Python36\lib\site-packages\urllib3\connectionpool.py", line 815, in _prepare_proxy
+    conn.connect()
+  File "C:\Python36\lib\site-packages\urllib3\connection.py", line 324, in connect
+    self._tunnel()
+  File "C:\Python36\lib\http\client.py", line 914, in _tunnel
+    (version, code, message) = response._read_status()
+  File "C:\Python36\lib\http\client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\requests\adapters.py", line 445, in send
+    timeout=timeout
+  File "C:\Python36\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Python36\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot393008213:AAFXvBiV6wPk7hEfJPWWpMN5-JfOaaZnE_A/sendMessage?chat_id=276615855&text=%D0%95%D1%89%D0%B5+%D1%80%D0%B0%D0%B7+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+Andrey+Normandec%21%0A%D0%A2%D1%8B+%D1%83%D0%B6%D0%B5+%D0%B5%D1%81%D1%82%D1%8C+%D0%B2+%D0%B1%D0%B0%D0%B7%D0%B5+%D0%BC%D0%BE%D0%B8%D1%85+%D0%B4%D1%80%D1%83%D0%B7%D0%B5%D0%B9%21&reply_to_message_id=11290 (Caused by ProxyError('Cannot connect to proxy.', RemoteDisconnected('Remote end closed connection without response',)))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\telebot\util.py", line 59, in run
+    task(*args, **kwargs)
+  File "D:/projects/python/price_bitcoin\contact.py", line 135, in send_welcome
+    "Еще раз привет, %s %s!\nТы уже есть в базе моих друзей!" % (fname, lname))
+  File "C:\Python36\lib\site-packages\telebot\__init__.py", line 1059, in reply_to
+    return self.send_message(message.chat.id, text, reply_to_message_id=message.message_id, **kwargs)
+  File "C:\Python36\lib\site-packages\telebot\__init__.py", line 599, in send_message
+    reply_markup, parse_mode, disable_notification))
+  File "C:\Python36\lib\site-packages\telebot\apihelper.py", line 140, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Python36\lib\site-packages\telebot\apihelper.py", line 54, in _make_request
+    timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Python36\lib\site-packages\requests\sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Python36\lib\site-packages\requests\sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Python36\lib\site-packages\requests\adapters.py", line 507, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot393008213:AAFXvBiV6wPk7hEfJPWWpMN5-JfOaaZnE_A/sendMessage?chat_id=276615855&text=%D0%95%D1%89%D0%B5+%D1%80%D0%B0%D0%B7+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+Andrey+Normandec%21%0A%D0%A2%D1%8B+%D1%83%D0%B6%D0%B5+%D0%B5%D1%81%D1%82%D1%8C+%D0%B2+%D0%B1%D0%B0%D0%B7%D0%B5+%D0%BC%D0%BE%D0%B8%D1%85+%D0%B4%D1%80%D1%83%D0%B7%D0%B5%D0%B9%21&reply_to_message_id=11290 (Caused by ProxyError('Cannot connect to proxy.', RemoteDisconnected('Remote end closed connection without response',)))
+
+2019-03-18 22:51:51,998 - MainThread -   WARNING -               App.send_message  - Send message cannot connect 187.72.89.126:41846
